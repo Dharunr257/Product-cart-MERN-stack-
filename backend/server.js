@@ -1,13 +1,16 @@
 import express from "express";
 import dotenv from "dotenv";
 import path from "path";
+import { fileURLToPath } from "url";
 import { connectDB } from "./config/db.js";
 import productRoutes from "./routes/product.route.js"
 
 dotenv.config();
+connectDB();
 const PORT = process.env.PORT || 5000
 
-const __dirname = path.resolve();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express()
 
