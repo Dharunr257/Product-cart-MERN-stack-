@@ -1,0 +1,1 @@
+type "npm run dev " to start the program
